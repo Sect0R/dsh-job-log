@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Pack and publish the GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the tagged commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Check JavaScript syntax
+        run: npm run check
+
+      - name: Pack the bundle
+        shell: bash
+        run: |
+          npm pack
+          for file in ./*.tgz; do
+            mv "$file" "dsh-job-log-${GITHUB_REF_NAME#v}.tgz"
+          done
+
+      - name: Create the GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" ./*.tgz \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            --verify-tag

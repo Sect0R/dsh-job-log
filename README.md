@@ -55,7 +55,28 @@ plugin_manager action=install_bundle target=/absolute/path/to/this/repository
 For a local profile, that adds `@local/job-log` and the `job-log` row. Restart
 or refresh the Web page if the tab does not appear immediately.
 
-The host half is a no-op; the browser module is `client.js`.
+The host half is a no-op; the browser module is `client.js`. The package name
+stays `@local/job-log`; the plugin row id is `job-log`.
+
+## Releases
+
+Tags `vX.Y.Z` trigger
+[`.github/workflows/release.yml`](.github/workflows/release.yml). The workflow
+runs `npm run check`, packs the bundle with `npm pack`, renames the tarball, and
+creates a GitHub Release with generated notes and the `.tgz` asset.
+
+Install a release:
+
+- from the release asset: download `dsh-job-log-X.Y.Z.tgz` and run
+  `plugin_manager action=install_bundle target=/absolute/path/to/dsh-job-log-X.Y.Z.tgz`;
+- or by tag, for a public repository:
+  `plugin_manager action=install_bundle target=git+https://github.com/Sect0R/dsh-job-log.git#vX.Y.Z`.
+
+DSH Plugin Manager does not auto-update local, git, or tarball installs; install
+the new release manually. Only registry (npm) installs get the built-in version
+list and **Update** action.
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 ## Use
 
@@ -92,7 +113,8 @@ the plugin and in the conversation store's view request.
 
 ## Compatibility
 
-- DSH Web `0.2.2-rc.1` (the version this plugin was built and verified against).
+- DSH Web `0.2.2-rc.1` (the version this plugin was built and verified against);
+  `engines.dsh` is `^0.2.2-rc.1`.
 - Client services used: `jobs`, `slots`, `locale`, `uiConversation`.
 - No model-facing tool, prompt, session event, or cursor is added or changed.
 
@@ -114,8 +136,7 @@ No build step is required: `client.js` is the browser module, and `index.js` is
 the no-op host half.
 
 ```text
-node --check client.js
-node --check index.js
+npm run check
 ```
 
 Then install the directory as a local bundle and exercise the tab/card paths in
@@ -131,6 +152,8 @@ Repository files:
 | `icon.svg` | Plugin Manager icon |
 | `assets/` | Logo, icons, and the social preview |
 | `locale/` | Plugin Manager title/description (en, ru) |
+| `CHANGELOG.md` | Release notes |
+| `.github/workflows/release.yml` | Tag-driven pack and GitHub Release |
 
 ## Discoverability
 

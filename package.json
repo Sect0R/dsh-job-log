@@ -19,8 +19,12 @@
     "icon.svg",
     "assets/*",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
+  "scripts": {
+    "check": "node --check client.js && node --check index.js"
+  },
   "author": "Sect0R",
   "license": "MIT",
   "keywords": [
@@ -31,6 +35,9 @@
     "background-jobs",
     "terminal"
   ],
+  "engines": {
+    "dsh": "^0.2.2-rc.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sect0R/dsh-job-log.git"
