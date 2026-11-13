@@ -1,0 +1,57 @@
+{
+  "name": "@local/job-log",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Job output tab for DSH Web: live background-job terminal output and clickable job ids",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Sect0R",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "job-output",
+    "background-jobs",
+    "terminal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sect0R/dsh-job-log.git"
+  },
+  "homepage": "https://github.com/Sect0R/dsh-job-log#readme",
+  "bugs": {
+    "url": "https://github.com/Sect0R/dsh-job-log/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-job-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-tool"
+      ]
+    }
+  }
+}

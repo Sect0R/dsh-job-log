@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Job output",
+    "description": "Adds a Job tab with live background-job terminal output and links job ids in tool cards to it."
+  }
+}

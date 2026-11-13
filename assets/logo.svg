@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Job output logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070f1c"/>
+      <stop offset=".55" stop-color="#0b1729"/>
+      <stop offset="1" stop-color="#102640"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#152d4d"/>
+      <stop offset="1" stop-color="#0c1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset=".55" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- ambient grid -->
+  <g opacity=".07" stroke="#93c5fd" stroke-width="2">
+    <path d="M0 128h512M0 224h512M0 320h512M0 416h512"/>
+    <path d="M128 0v512M224 0v512M320 0v512M416 0v512"/>
+  </g>
+
+  <!-- ambient glow behind the terminal -->
+  <ellipse cx="300" cy="270" rx="190" ry="150" fill="#1d4ed8" opacity=".18" filter="url(#softGlow)"/>
+
+  <!-- terminal window -->
+  <rect x="70" y="94" width="372" height="324" rx="42" fill="url(#window)" stroke="#2b4a72" stroke-width="4"/>
+  <rect x="70" y="94" width="372" height="324" rx="42" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity=".18"/>
+
+  <!-- title bar -->
+  <circle cx="112" cy="138" r="8" fill="#f87171" opacity=".9"/>
+  <circle cx="140" cy="138" r="8" fill="#fbbf24" opacity=".9"/>
+  <circle cx="168" cy="138" r="8" fill="#34d399" opacity=".9"/>
+  <path d="M110 174h292" stroke="#2b4a72" stroke-width="3" opacity=".7"/>
+
+  <!-- prompt -->
+  <path d="M126 228l46 38-46 38" fill="none" stroke="url(#accent)" stroke-width="19" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <rect x="204" y="286" width="68" height="19" rx="9.5" fill="#93c5fd"/>
+
+  <!-- output lines -->
+  <rect x="126" y="338" width="188" height="12" rx="6" fill="url(#line)" opacity=".62"/>
+  <rect x="126" y="368" width="248" height="12" rx="6" fill="url(#line)" opacity=".34"/>
+  <rect x="126" y="398" width="142" height="12" rx="6" fill="url(#line)" opacity=".22"/>
+
+  <!-- live status -->
+  <circle cx="398" cy="370" r="17" fill="#34d399" filter="url(#glow)"/>
+  <circle cx="398" cy="370" r="31" fill="none" stroke="#34d399" stroke-width="3" opacity=".38"/>
+  <circle cx="398" cy="370" r="48" fill="none" stroke="#34d399" stroke-width="1.5" opacity=".16"/>
+
+  <!-- small job badge -->
+  <rect x="126" y="444" width="134" height="38" rx="19" fill="#0b1729" stroke="#2b4a72" stroke-width="2"/>
+  <circle cx="148" cy="463" r="5" fill="#34d399"/>
+  <path d="M164 463h72" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+</svg>

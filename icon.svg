@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Job output">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="1" stop-color="#12233c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="8" y="11" width="48" height="42" rx="7" fill="#0d1b30" stroke="#2b4a72" stroke-width="1.5"/>
+  <path d="M16 24l7 5-7 5" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="28" y="31" width="9" height="3" rx="1.5" fill="#93c5fd"/>
+  <rect x="15" y="40" width="22" height="2.5" rx="1.25" fill="#3b82f6" opacity=".6"/>
+  <rect x="15" y="45" width="15" height="2.5" rx="1.25" fill="#3b82f6" opacity=".35"/>
+  <circle cx="49" cy="45" r="3" fill="#34d399"/>
+  <circle cx="49" cy="45" r="5.5" fill="none" stroke="#34d399" stroke-width="1" opacity=".45"/>
+</svg>

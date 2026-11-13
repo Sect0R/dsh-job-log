@@ -1,0 +1,5 @@
+# The Job output tab bundle: one Loader row whose client half registers the
+# "Job" conversation view and the clickable job ids in job tool cards.
+- insert:
+    - id: job-log
+      name: '@local/job-log'
