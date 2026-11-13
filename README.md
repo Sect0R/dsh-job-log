@@ -135,8 +135,20 @@ Repository files:
 ## Discoverability
 
 This repository is meant to be found through the GitHub topic
-[`dsh-plugin`](https://github.com/topics/dsh-plugin). If the topic is missing on
-this repo, add it under **Settings → General → Topics**.
+[`dsh-plugin`](https://github.com/topics/dsh-plugin). Topics and the social
+preview are public-repository surfaces:
+
+- Add topics in the repository's **About** section (the gear icon) —
+  `dsh-plugin`, `deepseek-harness`, `dsh`. Topics on a private repository are
+  not publicly discoverable.
+- Set the social preview under **Settings → General → Social preview** using
+  [`assets/social-preview.png`](assets/social-preview.png) (1280 × 640, under
+  1 MB). GitHub exposes this setting for public repositories, or for private
+  repositories that already have an uploaded image; a new private repository
+  does not show it.
+- GitHub repositories do not have a separate avatar — the repository page shows
+  the owner's avatar. [`assets/icon-128.png`](assets/icon-128.png) is the DSH
+  Plugin Manager icon, not a GitHub repository avatar.
 
 Suggested repository description:
 
