@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Job output logo" width="180" height="180">
+  <img src="assets/logo.png" alt="Job output logo" width="180" height="180">
 </p>
 
 <h1 align="center">Job output</h1>
